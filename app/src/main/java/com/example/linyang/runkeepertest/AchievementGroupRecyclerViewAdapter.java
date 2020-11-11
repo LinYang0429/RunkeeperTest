@@ -11,7 +11,10 @@ import android.widget.TextView;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+// first layer recycler view's adapter
 public class AchievementGroupRecyclerViewAdapter extends RecyclerView.Adapter<AchievementGroupRecyclerViewAdapter.ViewHolder> {
+
+    static final int COLUMN_NUM = 2;
 
     private Context mContext;
     private LinkedHashMap <String, List<List<String>>> mData;
@@ -35,17 +38,23 @@ public class AchievementGroupRecyclerViewAdapter extends RecyclerView.Adapter<Ac
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-
         String groupName = (String) mData.keySet().toArray()[position];
-        holder.groupNameTextView.setText(groupName);
         List<List<String>> groupItems= (List<List<String>>) mData.values().toArray()[position];
+        int completes = 0;
+        for(int i = 0; i < groupItems.size(); i++) {
+            if (groupItems.get(i).get(3).equals("1")) {
+                completes++;
+            }
+        }
+
+        holder.groupNameTextView.setText(groupName);
+        holder.groupCountTextView.setText(completes + " of " + groupItems.size());
 
         RecyclerView recyclerViewGrid = holder.itemView.findViewById(R.id.gridGroupItems);
-        recyclerViewGrid.setLayoutManager(new GridLayoutManager(mContext, 2));
+        recyclerViewGrid.setLayoutManager(new GridLayoutManager(mContext, COLUMN_NUM));
         gridViewAdapter = new AchievementGroupItemRecyclerViewAdapter(mContext, groupItems);
         gridViewAdapter.setClickListener(groupItemListener);
         recyclerViewGrid.setAdapter(gridViewAdapter);
-
     }
 
     @Override
@@ -56,10 +65,12 @@ public class AchievementGroupRecyclerViewAdapter extends RecyclerView.Adapter<Ac
 
     public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         TextView groupNameTextView;
+        TextView groupCountTextView;
 
         ViewHolder(View itemView) {
             super(itemView);
             groupNameTextView = itemView.findViewById(R.id.groupName);
+            groupCountTextView = itemView.findViewById(R.id.counts);
             itemView.setOnClickListener(this);
         }
 

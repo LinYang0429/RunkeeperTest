@@ -3,28 +3,29 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:layout_margin="10dp">
+    android:layout_margin="@dimen/default_padding">
 
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/groupItemImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:scaleType="fitCenter"/>
+        android:layout_width="@dimen/default_image_size"
+        android:layout_height="@dimen/default_image_size"
+        android:scaleType="fitCenter"
+        android:padding="@dimen/default_padding"/>
 
     <TextView
         android:id="@+id/groupItem"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_image_size"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_gravity="center"
-        android:textColor="#000000" />
+        android:textSize="@dimen/default_text_size"
+        android:gravity="center"
+        android:textColor="@color/black" />
 
     <TextView
         android:id="@+id/groupItemDescription"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/default_image_size"
         android:layout_height="wrap_content"
-        android:textSize="20sp"
-        android:layout_gravity="center"
-        android:textColor="#000000"/>
+        android:textSize="@dimen/default_text_size"
+        android:gravity="center"
+        android:textColor="@color/black"/>
 
 </LinearLayout>

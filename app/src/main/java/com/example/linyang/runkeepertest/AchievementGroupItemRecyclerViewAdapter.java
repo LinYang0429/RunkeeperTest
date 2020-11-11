@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import java.util.List;
 
+// second layer recycler view's adapter
 public class AchievementGroupItemRecyclerViewAdapter extends RecyclerView.Adapter<AchievementGroupItemRecyclerViewAdapter.ViewHolder> {
 
     private Context mContext;
@@ -31,16 +32,16 @@ public class AchievementGroupItemRecyclerViewAdapter extends RecyclerView.Adapte
 
     @Override
     public void onBindViewHolder(AchievementGroupItemRecyclerViewAdapter.ViewHolder holder, int position) {
-
         List<String> groupItems = mData.get(position);
+        if (groupItems != null && groupItems.size() != 0) {
+            holder.groupItemNameTextView.setText(groupItems.get(0));
+            holder.groupItemDescriptionTextView.setText(groupItems.get(1));
 
-        holder.groupItemNameTextView.setText(groupItems.get(0));
-        holder.groupItemDescriptionTextView.setText(groupItems.get(1));
-
-        Resources res = mContext.getResources();
-        String mDrawableName = groupItems.get(2);
-        int resID = res.getIdentifier(mDrawableName , "drawable", mContext.getPackageName());
-        holder.groupItemImageView.setImageResource(resID);
+            Resources res = mContext.getResources();
+            String mDrawableName = groupItems.get(2);
+            int resID = res.getIdentifier(mDrawableName , "drawable", mContext.getPackageName());
+            holder.groupItemImageView.setImageResource(resID);
+        }
     }
 
     @Override

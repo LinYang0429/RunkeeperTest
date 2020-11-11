@@ -1,4 +1,42 @@
 <resources>
     <string name="app_name">RunkeeperTest</string>
     <string name="action_settings">Settings</string>
+    <string name="longest_run">Longest Run</string>
+    <string name="longest_run_value">00:00:00</string>
+    <string name="longest_run_url">longest_run</string>
+    <string name="highest_elevation">Highest Elevation</string>
+    <string name="highest_elevation_value">2095 ft</string>
+    <string name="highest_elevation_url">highest_elevation</string>
+    <string name="fastest_5k">Fastest 5K</string>
+    <string name="fastest_5k_value">00:00</string>
+    <string name="fastest_5k_url">fastest_5k</string>
+    <string name="tenk">10K</string>
+    <string name="tenk_value">00:00:00</string>
+    <string name="tenk_url">tenk</string>
+    <string name="half_marathon">Half Marathon</string>
+    <string name="half_marathon_value">00:00</string>
+    <string name="half_marathon_url">half_marathon</string>
+    <string name="marathon">Marathon</string>
+    <string name="marathon_value">Not Yet</string>
+    <string name="marathon_url">marathon</string>
+
+    <string name="mizuno_singapore">Mizuno Singapore Ekiden 2015</string>
+    <string name="mizuno_singapore_value">00:00:00</string>
+    <string name="mizuno_singapore_url">mizuno_singapore</string>
+    <string name="virtual_5k">Virtual 5K Race</string>
+    <string name="virtual_5k_value">23:07</string>
+    <string name="virtual_5k_url">virtual_5k</string>
+    <string name="tokyo_hakone">Tokyo-Hakone Ekiden</string>
+    <string name="tokyo_hakone_value">00:00:00</string>
+    <string name="tokyo_hakone_url">tokyo_hakone</string>
+    <string name="virtual_10k">Virtual 10K Race</string>
+    <string name="virtual_10k_value">00:00:00</string>
+    <string name="virtual_10k_url">virtual_10k</string>
+    <string name="hakone">Hakone Ekiden</string>
+    <string name="hakone_value">00:00:00</string>
+    <string name="hakone_url">hakone</string>
+    <string name="virtual_half_marathon">Virtual Half Marathon Race</string>
+    <string name="virtual_half_marathon_value">00:00</string>
+    <string name="virtual_half_marathon_url">virtual_half_marathon</string>
+
 </resources>
